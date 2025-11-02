@@ -1,0 +1,14 @@
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/bin/Debug/net9.0/AutomatedTellerMachine
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/bin/Debug/net9.0/AutomatedTellerMachine.deps.json
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/bin/Debug/net9.0/AutomatedTellerMachine.runtimeconfig.json
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/bin/Debug/net9.0/AutomatedTellerMachine.dll
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/bin/Debug/net9.0/AutomatedTellerMachine.pdb
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.AssemblyInfoInputs.cache
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.AssemblyInfo.cs
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.csproj.CoreCompileInputs.cache
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.dll
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/refint/AutomatedTellerMachine.dll
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.pdb
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.genruntimeconfig.cache
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/ref/AutomatedTellerMachine.dll
