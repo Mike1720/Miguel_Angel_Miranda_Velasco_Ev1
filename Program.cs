@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace AutomatedTellerMachine
 {
@@ -105,13 +106,62 @@ namespace AutomatedTellerMachine
     // Agregado de cuentas a la lista cuentas
     public ATM()
     {
-      accounts.Add(new BankAccount("Juan Montes", "4242424242424240", "12/29", 145, 0.10));
-      accounts.Add(new BankAccount("Pedro Zapata", "4000056655665550", "07/26", 502, 125000));
-      accounts.Add(new BankAccount("Ana Martínez", "5555555555554440", "01/30", 112, 500.37));
-      accounts.Add(new BankAccount("Rogelio Guerra", "2223003122003220", "12/24", 730, 5400.05));
+      LoadAccountsFromFile("Accounts.txt");
     }
 
     // MÉTODOS
+    // Cargar Cuentas desde archivo
+    private void LoadAccountsFromFile(string filePath)
+    {
+      try
+      {
+        // Se valida la existencia de archivo en la ruta especificada
+        if (!File.Exists(filePath))
+        {
+          Console.WriteLine("Error, no se encontró el archivo");
+          Environment.Exit(0);
+        }
+
+        // Se asigna un arreglo conformado por todas la lineas del archivo
+        // [linea1, linea2, linea3, ..., lineaN]
+        string[] lines = File.ReadAllLines(filePath);
+
+        // Se itera sobre cada linea
+        foreach (string line in lines)
+        {
+          if (string.IsNullOrWhiteSpace(line)) continue;
+
+          // Se separa la cadena por el separador indicada
+          // [userName, accountNumber, expirtationDate, pin, balanceAccount]
+          string[] data = line.Split(",");
+
+          // Se valida si la longitud de la linea es mayor a 5; Numero de atributos de la clase usuario
+          if (data.Length < 5)
+          {
+            // Se invalida la linea y se continua con la siguiente linea
+            Console.WriteLine($"Linea invalida: {line}");
+            continue;
+          }
+
+          // Cada dato de cada linea se asigna a la variable correspondiente
+          string userName = data[0];
+          string accountNumber = data[1];
+          string expirationDate = data[2];
+          int pin = int.Parse(data[3]);
+          double balanceAccount = double.Parse(data[4]);
+          // Se crea y se añade la cuenta a la lista de cuentas
+          accounts.Add(new BankAccount(userName, accountNumber, expirationDate, pin, balanceAccount));
+        }
+
+        Console.WriteLine($"{accounts.Count} cuentas cargadas correctamente desde el archivo");
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error inesperado: {ex.Message}");
+        Environment.Exit(0);
+      }
+    }
     // Método de inicio
     public void Start()
     {
@@ -199,7 +249,7 @@ namespace AutomatedTellerMachine
     {
       // Corte de ejecución si usuario no autenticado
       if (!Authentication()) return;
-
+      Console.WriteLine($"Saldo actual: {currentBankAccount.BalanceAccount}");
       Console.WriteLine("Ingresa la cantidad de dinero a retirar (solo billetes)");
       Console.Write("Billetes validos: $20, $50, $100, $200, $500: ");
       int amount = int.Parse(Console.ReadLine());
@@ -245,6 +295,17 @@ namespace AutomatedTellerMachine
     {
       if (!Authentication()) return;
       Console.WriteLine($"Tu saldo actual es: ${currentBankAccount.BalanceAccount}");
+      Console.WriteLine("¿Deseas imprimir tu comprobante?: ");
+      Console.Write("1.- Si\n2.- No");
+      byte option = byte.Parse(Console.ReadLine());
+      if (option == 1)
+      {
+        PrintTicket();
+      }
+      else
+      {
+        return;
+      }
     }
     // Transferencia de saldo
     private void TransferMoney()
@@ -271,6 +332,17 @@ namespace AutomatedTellerMachine
         Console.WriteLine($"No se puede realizar la transferencia, verifica tu saldo");
       }
 
+    }
+    // Imprimir comprobate
+    private void PrintTicket()
+    {
+      string ticket = "Consulta de saldo\n" +
+                      $"Fecha: {DateTime.Now}\n" +
+                      $"Cliente: {currentBankAccount.UserName}\n" +
+                      $"Número de cuenta: {currentBankAccount.AccountNumber}\n" +
+                      $"Saldo actual: {currentBankAccount.BalanceAccount}\n";
+      File.WriteAllText("Ticket.txt", ticket);
+      Console.WriteLine("Comprobante generado en 'Ticket.txt'");
     }
   }
   class Application

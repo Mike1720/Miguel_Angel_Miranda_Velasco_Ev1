@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutomatedTellerMachine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b4d84f858e86f382489651141b02bd99db48fe1")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutomatedTellerMachine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutomatedTellerMachine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,3 +12,4 @@
 /Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.pdb
 /Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.genruntimeconfig.cache
 /Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/ref/AutomatedTellerMachine.dll
+/Users/mikemv1720/Documents/Personal_practices/C#/ATM/AutomatedTellerMachine/obj/Debug/net9.0/AutomatedTellerMachine.sourcelink.json
